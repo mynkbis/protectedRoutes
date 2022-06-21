@@ -1,8 +1,10 @@
 import React from 'react'
 
 const Profile = () => {
+
+  const user=sessionStorage.getItem("email")
   return (
-    <div>profile</div>
+    <h1>Welcome: {user}</h1>
   )
 }
 
