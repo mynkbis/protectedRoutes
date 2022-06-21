@@ -1,0 +1,36 @@
+.loginButton {
+    display: block;
+    margin: 10px;
+    border: 2px solid grey;
+    width: 250px;
+    height: 200px;
+    margin-left: 43%;
+    background-color: rgb(190, 190, 190);
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.loginButtonBox>div {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.loginButtonBox>button {
+    padding: 5px;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.loginButtonBox>button:hover {
+    background-color: grey;
+    color: whitesmoke;
+}
+
+.loginButtonBox>p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}

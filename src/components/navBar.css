@@ -1,0 +1,11 @@
+.navBar1 {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(15, 133, 141);
+    color: white;
+    font: bold;
+    height: 55px;
+    /* box-shadow: 200px 50px 41px; */
+    padding-top: 20px;
+
+}
