@@ -9,9 +9,9 @@ const NavBar = () => {
       <div>
           <nav className='navBar1'>
                <NavLink to='/home'>Home</NavLink>
-         <NavLink to='/login'>Login</NavLink>
+               <NavLink to='/login'>Login</NavLink>
               <NavLink to='/profile'>Profile</NavLink>
-                 <NavLink to='/signup'>SignUp</NavLink>
+              <NavLink to='/signup'>SignUp</NavLink>
              <SignoutButton/>
           </nav>
           </div>
