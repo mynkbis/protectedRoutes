@@ -3,7 +3,7 @@ import './signUp.css'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { auth } from "../firebase"
 import Validation from '../components/validation'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignUp = () => {
@@ -13,8 +13,8 @@ const SignUp = () => {
   })
   const  [errors, setErrors]=useState({})
   
-  // const [registerUser, setRegisterUser] = useState('')
-  // const [registerPassword, setRegisterPassword]=useState('')
+const navigate=useNavigate()
+
 
   const handleChange1 = (e) => {
     setFValues({ ...fValues, [e.target.name]: e.target.value })
@@ -30,6 +30,7 @@ const SignUp = () => {
       setErrors(Validation(fValues));
 console.log(error.message)      
     }    
+    navigate('../home')
     setFValues({
     registerUser: "",   // clearing the fields
     registerPassword: ""

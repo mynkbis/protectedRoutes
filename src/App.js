@@ -9,17 +9,20 @@ import SignUp from './Pages/signUp';
 // import { auth } from '../src/firebase'
 import Error from './Pages/error'
 import Reset from './Pages/reset';
-import { AddToDo } from './components/addToDo';
-function App() {
 
+import TodoApp from './Pages/todo';
+import { useState } from 'react';
+import { AuthProvider } from './components/context/auth';
+function App() {
+const [user, setUser]=useState({})
   // const user = sessionStorage.getItem('email')
 
 
   return (
     <>
-    
+    <AuthProvider>
       <div className="App">
-               <NavBar/>
+        <NavBar user={user} />
         </div>
         <Routes>
         <Route exact path="/home" element={<Home />}/>
@@ -32,7 +35,7 @@ function App() {
         <Route exact path='*' element={<Error />} /> 
         
       </Routes>   
-     <AddToDo/>
+  </AuthProvider>
        </>
 
   );

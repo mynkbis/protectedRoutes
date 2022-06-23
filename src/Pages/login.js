@@ -53,7 +53,7 @@ signInWithPopup(auth, provider)
     try {
       const user = await signInWithEmailAndPassword(auth, fValues.loginEmail, fValues.loginPassword)   
       Navigate("home")
-    // sessionStorage.setItem('email', auth.user.email)
+  
            // using inbuit method of firebase fr signing in. 
       console.log("user loged in is ", user)
     } catch (error) {
