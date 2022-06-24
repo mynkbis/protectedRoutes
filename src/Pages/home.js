@@ -15,7 +15,7 @@ useEffect(() => {
   return (
     <div>
       <h1>User Authentication</h1>
-      Welcome: {user?.email } 
+      Welcome: {user?.email} 
       </div>
   )
 }

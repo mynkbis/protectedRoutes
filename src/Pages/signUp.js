@@ -25,16 +25,17 @@ const navigate=useNavigate()
     const user = await createUserWithEmailAndPassword(auth, fValues.registerUser, fValues.registerPassword)
     console.log(user) 
       // in built method for registering or signup
+       navigate('../home')   
   }
     catch (error) {
-      setErrors(Validation(fValues));
-console.log(error.message)      
+    setErrors(Validation(fValues));
+      console.log(error.message)
     }    
-    navigate('../home')
     setFValues({
     registerUser: "",   // clearing the fields
-    registerPassword: ""
+      registerPassword: ""
     })
+    
 }
   return (
       <div>
@@ -49,11 +50,9 @@ console.log(error.message)
           <div><input type="password" name="registerPassword" defaultValue={fValues.registerPassword}
             placeholder='Password' onChange={(e) => handleChange1(e)} />
            {errors.password && <h5>{errors.password}</h5>}</div>
-          
-          <p><Link to ={'../login'}>Already Registered!</Link></p>
           <button onClick={(e) => handleSubmit()}>SignUp</button>
-         
-        </div>
+           <p><Link to ={'../login'} style={{ color: '#FFF' }}> Registered User? click here!</Link></p>
+          </div>
           </div>
       </div>
   )

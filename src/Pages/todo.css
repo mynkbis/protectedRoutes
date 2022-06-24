@@ -1,0 +1,25 @@
+.boxTodo {
+    margin: 0;
+}
+
+.boxTodo1 {
+    border: 2px solid rgb(133, 135, 150);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 90%;
+    padding-top: 5px;
+    padding-left: 5px;
+    box-shadow: 1px 1px 0px;
+    margin-left: -8px;
+}
+
+.boxTodo2 {
+
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 90%;
+    padding-top: 10px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 1.5px;
+    margin-left: -8px;
+}

@@ -1,7 +1,7 @@
 .SignupBox {
     background-color: rgb(15, 133, 141);
     width: 250px;
-    height: 200px;
+    height: 290px;
     color: rgb(32, 28, 28);
     display: block;
     margin: 10px;
@@ -45,9 +45,19 @@ button {
 
 .SignupBox2>div>h5 {
     color: red;
-    margin: 0;
-    font-weight: 800;
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
+    font-weight: 100;
+    font-size: 15px;
+    font-family: serif;
+    background-color: antiquewhite;
 
+}
+
+.SignupBox2>p {
+    font-family: Arial,
+        Helvetica,
+        sans-serif;
+    font-size: medium;
+    margin-left: 10px;
+    font-weight: 800;
 }

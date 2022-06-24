@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Validation from '../components/validation'
 import { getAuth, signInWithPopup } from "firebase/auth"
 
+
 const Login = () => {
   const [fValues, setFValues] = useState({
     loginEmail: "",
@@ -13,10 +14,7 @@ const Login = () => {
 })
 
   const [errors, setErrors] = useState({});
-  const Navigate = useNavigate();
-
-
-  
+  const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
   const googleLogin = () => {
@@ -29,16 +27,11 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+      if(user)navigate("../profile")
     // ...
   }).catch((error) => {
     // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
+       alert("Please try again")
   });
 }
 
@@ -52,9 +45,8 @@ signInWithPopup(auth, provider)
    console.log("submiit",fValues )
     try {
       const user = await signInWithEmailAndPassword(auth, fValues.loginEmail, fValues.loginPassword)   
-      Navigate("home")
-  
-           // using inbuit method of firebase fr signing in. 
+      if(user)navigate("../profile")
+             // using inbuit method of firebase fr signing in. 
       console.log("user loged in is ", user)
     } catch (error) {
       setErrors(Validation(fValues));
@@ -65,19 +57,7 @@ signInWithPopup(auth, provider)
     loginPassword:""
  })
   }
-  
-  const sendPasswordReset = async (email) => {
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert("Password reset link sent!");
-  } catch (err) {
-    console.error(err);
-    alert(err.message);
-  }
-};
-
-
-  return (
+    return (
       <div>
           <p>Login</p>    
           <div className='loginButton'>Login
@@ -92,9 +72,9 @@ signInWithPopup(auth, provider)
            {errors.password && <p>{ errors.password }</p>}</div>
         
           <button onClick={(e) => handleLogin()}>Login</button>
-          <button onClick={() => { googleLogin() }}>Google login</button>
-          <p><Link to={'../reset'}>Forget password!</Link></p>
-            <p><Link to ={'../signup'}>New User? Click here</Link></p>
+          <button onClick={() => { googleLogin() }}>Google Login</button>
+          <p className="renderBox"><Link to={'../reset'} style={{ color: 'white' }} >Forget password!</Link></p>
+            <p><Link to ={'../signup'}style={{ color: '#FFF' }} >New User? Click here</Link></p>
            </div>
           </div>
       </div>

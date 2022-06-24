@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { db } from '../firebase'
 import { collection, addDoc } from 'firebase/firestore'
-
+import "./icon.css"
 
 export const AddToDo = () => {
     const [title, setTitle] = useState()
@@ -28,7 +28,7 @@ export const AddToDo = () => {
                     
                 <input type="text" placeholder="enter todo.." defaultValue={title} onChange={(e)=>setTitle(e.target.value) } />
                 </div><div>
-                    <button >Add</button>
+                    <button className='buttonBox' >Add</button>
                  
                 </div>
             </form>

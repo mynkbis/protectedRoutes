@@ -26,7 +26,7 @@ const [user, setUser]=useState({})
         </div>
         <Routes>
         <Route exact path="/home" element={<Home />}/>
-         <Route exact path="*" element={<Home />}/>
+         {/* <Route exact path="*" element={<Home />}/> */}
         <Route exact path='/login' element={<Login />}  /> 
         {/* <Route exact path='/login/profile' element={<Profile />} /> */}
         <Route exact path='/profile' element={<Profile />} />
@@ -35,7 +35,8 @@ const [user, setUser]=useState({})
         <Route exact path='*' element={<Error />} /> 
         
       </Routes>   
-  </AuthProvider>
+      </AuthProvider>
+      
        </>
 
   );

@@ -1,0 +1,8 @@
+.todoBox {
+    width: 12%;
+    border: 2px solid rgb(28, 22, 36);
+    box-shadow: 2px 2px 20px;
+    margin-left: 40%;
+    padding-left: 30px;
+    padding-bottom: 40px;
+}

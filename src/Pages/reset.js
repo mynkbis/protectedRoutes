@@ -4,7 +4,7 @@ import { } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from '../firebase'
-import './login.css'
+import '../Pages/reset.css'
 function Reset() {
   const [email, setEmail] = useState("");
 
@@ -19,8 +19,8 @@ function Reset() {
   }
 };
   return (
-    <div className="loginButton">Reset Password
-      <div className="loginButtonBox">
+    <div className="resetButton">Reset Password
+      <div className="resetButtonBox">
        <div>
               <input
           type="text"
@@ -37,7 +37,7 @@ function Reset() {
           submit
         </button>
       
-         <h4> Don't have an account?</h4> <Link to="../signup">Register</Link> now.
+         <h4> Don't have an account?<Link to="../signup" style={{ color: '#FFF' }}>Register</Link> now.</h4> 
         
       </div>
     </div>

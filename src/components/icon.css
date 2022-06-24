@@ -1,0 +1,10 @@
+.buttonBox {
+    background-color: rgba(0, 0, 0, 0.747);
+    color: white;
+}
+
+.buttonBox:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 20px;
+}

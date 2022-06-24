@@ -4,7 +4,7 @@ import Title from '../components/title'
 import { db } from '../firebase'
 import { collection, query, onSnapshot, doc, updateDoc, deleteDoc} from 'firebase/firestore'
 import { IconFile } from '../components/icon'
-
+import './todo.css'
 
 const TodoApp = () => {
     const [todos, setTodos]=useState([])
@@ -41,16 +41,15 @@ return()=>unsub
     }
   return (
       <div>
-          <div>
+          <div className='boxTodo'>
           <Title />
           </div>
-          <div>
+          <div className='boxTodo1'>
               <AddToDo/>
       </div>
-      <div>
+      <div className="boxTodo2">
         {todos.map((todo) => (
-      
-                  <IconFile key={todo.id} todo={todo} toggleComplete={toggleComplete}
+                        <IconFile key={todo.id} todo={todo} toggleComplete={toggleComplete}
                         handleDelete={handleDelete}
                     handleEdit={handleEdit}></IconFile> 
             ))}
