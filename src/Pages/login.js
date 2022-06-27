@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './login.css'
-import { auth, } from "../firebase"
+import { auth, db, } from "../firebase"
 import { signInWithEmailAndPassword, GoogleAuthProvider, sendPasswordResetEmail } from "firebase/auth"
 import { Link, useNavigate } from 'react-router-dom'
 import Validation from '../components/validation'
@@ -40,6 +40,19 @@ signInWithPopup(auth, provider)
   setFValues({...fValues, [e.target.name]:e.target.value})
   }
 
+
+auth.onAuthStateChanged(user => {
+    const username = document.getElementById('username');
+    if (user) {
+        db.collection('users').doc(user.uid).get().then((snapshot) => {
+             console.log("from new state",snapshot.data().Name);
+            username.innerText = snapshot.data().Name;
+        })
+    }
+    else {
+        console.log("from new state 2",'user is not signed in to retrive username');
+    }
+})
 
   const handleLogin = async () => {
    console.log("submiit",fValues )
