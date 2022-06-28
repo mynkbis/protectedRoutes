@@ -83,11 +83,10 @@ auth.onAuthStateChanged(user => {
           <div><input type='password' name="loginPassword" placeholder='Password' defaultValue={fValues.loginPassword}
             onChange={(e) => handleChange(e)} />
            {errors.password && <p>{ errors.password }</p>}</div>
-        
           <button onClick={(e) => handleLogin()}>Login</button>
           <button onClick={() => { googleLogin() }}>Google Login</button>
           <p className="renderBox"><Link to={'../reset'} style={{ color: 'white' }} >Forget password!</Link></p>
-            <p><Link to ={'../signup'}style={{ color: '#FFF' }} >New User? Click here</Link></p>
+          <p><Link to ={'../signup'}style={{ color: '#FFF' }} >New User? Click here</Link></p>
            </div>
           </div>
       </div>

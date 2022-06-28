@@ -33,10 +33,10 @@ console.log(db)
 
 
  const getNote = async (id) => {
-    const noteSnapshot = await getDoc(doc(db, 'todos', id));
+    const noteSnapshot = await getDoc(doc(db, 'todos', id  ));
    if (noteSnapshot.exists()) {
       
-  console.log("data fro mb",noteSnapshot.data())
+  console.log("data fro DB",noteSnapshot.data())
      return noteSnapshot.data();
      
    } else {
@@ -46,7 +46,7 @@ console.log(db)
 };
 
 getNote(
-  "A0nt3A65OsKC75vsYsei");
+  "NCoeee8dCG1rgWlbFWD2");
 
   // let unsubscribe = onAuthStateChanged(auth, (currentUser) =>
   // {

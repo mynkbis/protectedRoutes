@@ -23,7 +23,7 @@ const Profile = () => {
     <>
       <h1>Hello: {user?.email}</h1>
       <div className='todoBox'>
-        <TodoApp />
+        <TodoApp user={user} />
         </div>
     </>
   )
